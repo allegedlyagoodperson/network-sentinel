@@ -1,0 +1,4 @@
+timestamp,source_ip,destination_ip,destination_port,protocol,status,bytes_sent,bytes_received
+2025-03-14T09:16:00,203.0.113.50,10.0.0.5,22,TCP,rejected,60,0
+2025-03-14T09:16:05,203.0.113.50,10.0.0.5,80,PPPPPPPPPPP,allowed,60,0
+2025-03-14T09:16:01,203.0.113.50,10.0.0.5,23,TCP,rejected,60,0

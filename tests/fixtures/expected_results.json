@@ -1,0 +1,346 @@
+{
+  "contract_version": 1.0,
+  "about": "Fixed expected values for Stage 0 tests and the sample data. Canonical texts were typed by hand from the specification and hashed with sha256sum, independently of the project code. If a test fails, find out WHY before changing a value here.",
+  "golden_event_ids": [
+    {
+      "name": "spec_sample_row_occurrence_1",
+      "inputs": {
+        "event_type": "authentication",
+        "timestamp": "2025-03-14T09:15:02+00:00",
+        "source_ip": "203.0.113.50",
+        "status": "failure",
+        "source_file": "auth_sample.csv",
+        "source_row": 2,
+        "raw_event": {
+          "timestamp": "2025-03-14T09:15:02",
+          "source_ip": "203.0.113.50",
+          "username": "admin",
+          "status": "failure"
+        },
+        "occurrence": 1,
+        "destination_ip": "10.0.0.5",
+        "destination_port": null,
+        "protocol": null,
+        "username": "admin",
+        "service": "ssh",
+        "bytes_sent": null,
+        "bytes_received": null
+      },
+      "canonical_text": "{\"bytes_received\":null,\"bytes_sent\":null,\"destination_ip\":\"10.0.0.5\",\"destination_port\":null,\"event_type\":\"authentication\",\"occurrence\":1,\"protocol\":null,\"service\":\"ssh\",\"source_file\":\"auth_sample.csv\",\"source_ip\":\"203.0.113.50\",\"status\":\"failure\",\"timestamp\":\"2025-03-14T09:15:02.000000+00:00\",\"username\":\"admin\"}",
+      "expected_event_id": "EVT-37f239749a51d00c"
+    },
+    {
+      "name": "same_row_occurrence_2",
+      "inputs": {
+        "event_type": "authentication",
+        "timestamp": "2025-03-14T09:15:02+00:00",
+        "source_ip": "203.0.113.50",
+        "status": "failure",
+        "source_file": "auth_sample.csv",
+        "source_row": 2,
+        "raw_event": {
+          "timestamp": "2025-03-14T09:15:02",
+          "source_ip": "203.0.113.50",
+          "username": "admin",
+          "status": "failure"
+        },
+        "occurrence": 2,
+        "destination_ip": "10.0.0.5",
+        "destination_port": null,
+        "protocol": null,
+        "username": "admin",
+        "service": "ssh",
+        "bytes_sent": null,
+        "bytes_received": null
+      },
+      "canonical_text": "{\"bytes_received\":null,\"bytes_sent\":null,\"destination_ip\":\"10.0.0.5\",\"destination_port\":null,\"event_type\":\"authentication\",\"occurrence\":2,\"protocol\":null,\"service\":\"ssh\",\"source_file\":\"auth_sample.csv\",\"source_ip\":\"203.0.113.50\",\"status\":\"failure\",\"timestamp\":\"2025-03-14T09:15:02.000000+00:00\",\"username\":\"admin\"}",
+      "expected_event_id": "EVT-837cd6fc2a2a2201"
+    },
+    {
+      "name": "same_row_different_file_name",
+      "inputs": {
+        "event_type": "authentication",
+        "timestamp": "2025-03-14T09:15:02+00:00",
+        "source_ip": "203.0.113.50",
+        "status": "failure",
+        "source_file": "auth_copy.csv",
+        "source_row": 2,
+        "raw_event": {
+          "timestamp": "2025-03-14T09:15:02",
+          "source_ip": "203.0.113.50",
+          "username": "admin",
+          "status": "failure"
+        },
+        "occurrence": 1,
+        "destination_ip": "10.0.0.5",
+        "destination_port": null,
+        "protocol": null,
+        "username": "admin",
+        "service": "ssh",
+        "bytes_sent": null,
+        "bytes_received": null
+      },
+      "canonical_text": "{\"bytes_received\":null,\"bytes_sent\":null,\"destination_ip\":\"10.0.0.5\",\"destination_port\":null,\"event_type\":\"authentication\",\"occurrence\":1,\"protocol\":null,\"service\":\"ssh\",\"source_file\":\"auth_copy.csv\",\"source_ip\":\"203.0.113.50\",\"status\":\"failure\",\"timestamp\":\"2025-03-14T09:15:02.000000+00:00\",\"username\":\"admin\"}",
+      "expected_event_id": "EVT-ea0703cf4a631694"
+    },
+    {
+      "name": "network_event_with_numbers",
+      "inputs": {
+        "event_type": "network_connection",
+        "timestamp": "2025-03-14T09:16:00+00:00",
+        "source_ip": "203.0.113.50",
+        "status": "rejected",
+        "source_file": "network_sample.csv",
+        "source_row": 2,
+        "raw_event": {
+          "timestamp": "2025-03-14T09:15:02",
+          "source_ip": "203.0.113.50",
+          "username": "admin",
+          "status": "failure"
+        },
+        "occurrence": 1,
+        "destination_ip": "10.0.0.5",
+        "destination_port": 22,
+        "protocol": "TCP",
+        "username": null,
+        "service": null,
+        "bytes_sent": 60,
+        "bytes_received": 0
+      },
+      "canonical_text": "{\"bytes_received\":0,\"bytes_sent\":60,\"destination_ip\":\"10.0.0.5\",\"destination_port\":22,\"event_type\":\"network_connection\",\"occurrence\":1,\"protocol\":\"TCP\",\"service\":null,\"source_file\":\"network_sample.csv\",\"source_ip\":\"203.0.113.50\",\"status\":\"rejected\",\"timestamp\":\"2025-03-14T09:16:00.000000+00:00\",\"username\":null}",
+      "expected_event_id": "EVT-34c648882b187dce"
+    },
+    {
+      "name": "offset_time_and_non_ascii_username",
+      "inputs": {
+        "event_type": "authentication",
+        "timestamp": "2025-03-14T14:20:41+05:00",
+        "source_ip": "198.51.100.23",
+        "status": "success",
+        "source_file": "auth_sample.csv",
+        "source_row": 2,
+        "raw_event": {
+          "timestamp": "2025-03-14T09:15:02",
+          "source_ip": "203.0.113.50",
+          "username": "admin",
+          "status": "failure"
+        },
+        "occurrence": 1,
+        "destination_ip": "10.0.0.5",
+        "destination_port": null,
+        "protocol": null,
+        "username": "Zoë|b",
+        "service": "ssh",
+        "bytes_sent": null,
+        "bytes_received": null
+      },
+      "canonical_text": "{\"bytes_received\":null,\"bytes_sent\":null,\"destination_ip\":\"10.0.0.5\",\"destination_port\":null,\"event_type\":\"authentication\",\"occurrence\":1,\"protocol\":null,\"service\":\"ssh\",\"source_file\":\"auth_sample.csv\",\"source_ip\":\"198.51.100.23\",\"status\":\"success\",\"timestamp\":\"2025-03-14T09:20:41.000000+00:00\",\"username\":\"Zo\\u00eb|b\"}",
+      "expected_event_id": "EVT-8bc178593f44dce5"
+    }
+  ],
+  "golden_content_fingerprint": {
+    "name": "content_fingerprint_of_spec_sample_row",
+    "inputs": {
+      "event_type": "authentication",
+      "timestamp": "2025-03-14T09:15:02+00:00",
+      "source_ip": "203.0.113.50",
+      "status": "failure",
+      "source_file": "auth_sample.csv",
+      "source_row": 2,
+      "raw_event": {
+        "timestamp": "2025-03-14T09:15:02",
+        "source_ip": "203.0.113.50",
+        "username": "admin",
+        "status": "failure"
+      },
+      "occurrence": 1,
+      "destination_ip": "10.0.0.5",
+      "destination_port": null,
+      "protocol": null,
+      "username": "admin",
+      "service": "ssh",
+      "bytes_sent": null,
+      "bytes_received": null
+    },
+    "canonical_text": "{\"bytes_received\":null,\"bytes_sent\":null,\"destination_ip\":\"10.0.0.5\",\"destination_port\":null,\"event_type\":\"authentication\",\"protocol\":null,\"service\":\"ssh\",\"source_ip\":\"203.0.113.50\",\"status\":\"failure\",\"timestamp\":\"2025-03-14T09:15:02.000000+00:00\",\"username\":\"admin\"}",
+    "expected_fingerprint": "9a83f9c3f315ef0ac1e7778f22e389c2edc8d5b1872e89c89db7dc4dfe4bb677"
+  },
+  "golden_alert_ids": [
+    {
+      "name": "port_scan_two_events_shuffled_input",
+      "inputs": {
+        "rule_id": "NET_PORT_SCAN",
+        "source_ip": "203.0.113.50",
+        "time_start": "2025-03-14T09:16:00+00:00",
+        "time_end": "2025-03-14T09:16:30+00:00",
+        "event_ids": [
+          "EVT-bbbbbbbbbbbbbbbb",
+          "EVT-aaaaaaaaaaaaaaaa"
+        ]
+      },
+      "canonical_text": "{\"event_ids\":[\"EVT-aaaaaaaaaaaaaaaa\",\"EVT-bbbbbbbbbbbbbbbb\"],\"rule_id\":\"NET_PORT_SCAN\",\"source_ip\":\"203.0.113.50\",\"time_end\":\"2025-03-14T09:16:30.000000+00:00\",\"time_start\":\"2025-03-14T09:16:00.000000+00:00\"}",
+      "expected_alert_id": "ALT-d4865f22a471cfa4"
+    },
+    {
+      "name": "same_range_one_extra_event",
+      "inputs": {
+        "rule_id": "NET_PORT_SCAN",
+        "source_ip": "203.0.113.50",
+        "time_start": "2025-03-14T09:16:00+00:00",
+        "time_end": "2025-03-14T09:16:30+00:00",
+        "event_ids": [
+          "EVT-cccccccccccccccc",
+          "EVT-aaaaaaaaaaaaaaaa",
+          "EVT-bbbbbbbbbbbbbbbb"
+        ]
+      },
+      "canonical_text": "{\"event_ids\":[\"EVT-aaaaaaaaaaaaaaaa\",\"EVT-bbbbbbbbbbbbbbbb\",\"EVT-cccccccccccccccc\"],\"rule_id\":\"NET_PORT_SCAN\",\"source_ip\":\"203.0.113.50\",\"time_end\":\"2025-03-14T09:16:30.000000+00:00\",\"time_start\":\"2025-03-14T09:16:00.000000+00:00\"}",
+      "expected_alert_id": "ALT-051b7261ae961436"
+    },
+    {
+      "name": "missing_source_ip_is_null",
+      "inputs": {
+        "rule_id": "AUTH_BRUTE_FORCE",
+        "source_ip": null,
+        "time_start": "2025-03-14T09:15:02+00:00",
+        "time_end": "2025-03-14T09:15:02+00:00",
+        "event_ids": [
+          "EVT-aaaaaaaaaaaaaaaa"
+        ]
+      },
+      "canonical_text": "{\"event_ids\":[\"EVT-aaaaaaaaaaaaaaaa\"],\"rule_id\":\"AUTH_BRUTE_FORCE\",\"source_ip\":null,\"time_end\":\"2025-03-14T09:15:02.000000+00:00\",\"time_start\":\"2025-03-14T09:15:02.000000+00:00\"}",
+      "expected_alert_id": "ALT-f4e19f3893d112f8"
+    }
+  ],
+  "config_golden": {
+    "volume_min_bytes": 10000000,
+    "note": "10 MB is decimal: 10 x 1,000,000 bytes. It is not 10,485,760."
+  },
+  "sample_files": {
+    "auth_sample.csv": {
+      "log_type": "authentication",
+      "data_rows": 20,
+      "expected_rejected_rows": 0,
+      "header": "timestamp,source_ip,username,status,destination_ip,service"
+    },
+    "network_sample.csv": {
+      "log_type": "network_connection",
+      "data_rows": 52,
+      "expected_rejected_rows": 0,
+      "header": "timestamp,source_ip,destination_ip,destination_port,protocol,status,bytes_sent,bytes_received"
+    }
+  },
+  "expected_alerts": [
+    {
+      "dataset": "auth_sample.csv",
+      "rule_id": "AUTH_BRUTE_FORCE",
+      "source_ip": "203.0.113.50",
+      "severity": "high",
+      "confidence": "high",
+      "time_start": "2025-03-14T09:15:02+00:00",
+      "time_end": "2025-03-14T09:16:40+00:00",
+      "supporting_event_count": 9,
+      "evidence_expectations": {
+        "failure_count": 8,
+        "distinct_usernames": 4,
+        "followed_by_success": true,
+        "success_event_count": 1,
+        "why": "8 failures in 56 s, 4 usernames (high confidence), one success 42 s after the last failure (high severity); time_end is the success"
+      }
+    },
+    {
+      "dataset": "network_sample.csv",
+      "rule_id": "NET_PORT_SCAN",
+      "source_ip": "203.0.113.50",
+      "severity": "medium",
+      "confidence": "high",
+      "time_start": "2025-03-14T09:16:00+00:00",
+      "time_end": "2025-03-14T09:16:17+00:00",
+      "supporting_event_count": 18,
+      "evidence_expectations": {
+        "distinct_port_count": 18,
+        "destination_ip": "10.0.0.5",
+        "why": "18 ports in 17 s (threshold 15, below 45 so medium); 17 of 18 attempts rejected (94 percent, so high confidence)"
+      }
+    },
+    {
+      "dataset": "network_sample.csv",
+      "rule_id": "NET_REPEATED_REJECTS",
+      "source_ip": "10.0.0.31",
+      "severity": "low",
+      "confidence": "low",
+      "time_start": "2025-03-14T09:40:00+00:00",
+      "time_end": "2025-03-14T09:41:35+00:00",
+      "supporting_event_count": 20,
+      "evidence_expectations": {
+        "rejected_count": 20,
+        "why": "exactly the threshold of 20 in 95 s; every rejection hits 10.0.0.9 port 514, so confidence is low"
+      }
+    },
+    {
+      "dataset": "network_sample.csv",
+      "rule_id": "NET_HIGH_VOLUME",
+      "source_ip": "10.0.0.40",
+      "severity": "medium",
+      "confidence": "low",
+      "time_start": "2025-03-14T11:42:30+00:00",
+      "time_end": "2025-03-14T11:42:30+00:00",
+      "supporting_event_count": 1,
+      "evidence_expectations": {
+        "bucket_start": "2025-03-14T11:40:00+00:00",
+        "bucket_bytes_sent": 12000000,
+        "baseline_bytes": 1050000,
+        "eligible_bucket_count": 9,
+        "baseline_scope": "this_source_ip_only",
+        "why": "12,000,000 bytes is at least 10,000,000 and at least 5 times the host's own median of 1,050,000"
+      }
+    },
+    {
+      "dataset": "auth_sample.csv + network_sample.csv",
+      "rule_id": "CORR_AUTH_NET",
+      "source_ip": "203.0.113.50",
+      "severity": "critical",
+      "confidence": "high",
+      "time_start": "2025-03-14T09:15:02+00:00",
+      "time_end": "2025-03-14T09:16:40+00:00",
+      "supporting_event_count": 27,
+      "evidence_expectations": {
+        "link_value": "203.0.113.50",
+        "gap_seconds": 0,
+        "destination_match": true,
+        "why": "login burst and port scan overlap in time; the burst has a linked success so severity is critical; both target 10.0.0.5 so confidence is high"
+      }
+    }
+  ],
+  "expected_base_alert_count": 4,
+  "expected_correlated_alert_count": 1,
+  "expected_notes": [
+    "NET_HIGH_VOLUME skipped some sources for having fewer than 6 active buckets; the note must list at least 198.51.100.23, 203.0.113.50 and 10.0.0.31"
+  ],
+  "benign_sources_no_alert_expected": [
+    {
+      "source_ip": "10.0.0.21",
+      "why": "ordinary successful logins"
+    },
+    {
+      "source_ip": "10.0.0.22",
+      "why": "ordinary successful login"
+    },
+    {
+      "source_ip": "10.0.0.23",
+      "why": "forgetful user: one failure then a success, below the threshold"
+    },
+    {
+      "source_ip": "198.51.100.23",
+      "why": "busy web client: many allowed connections to one port (no scan), successful logins only"
+    },
+    {
+      "source_ip": "198.51.100.77",
+      "why": "4 failures in 48 s, one below the threshold of 5"
+    },
+    {
+      "source_ip": "10.0.0.12",
+      "why": "single ICMP connection with no bytes"
+    }
+  ]
+}

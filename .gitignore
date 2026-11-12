@@ -1,0 +1,36 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment variables and Streamlit secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local databases and SQLite journal files
+data/network_sentinel.db
+data/*.db
+data/*.db-*
+data/*.sqlite
+data/*.sqlite3
+*.db-wal
+*.db-shm
+
+# Local logs and generated build output
+*.log
+build/
+dist/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini

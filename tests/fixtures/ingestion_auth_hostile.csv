@@ -1,0 +1,8 @@
+timestamp,source_ip,username,status,destination_ip,service
+2025-03-14T09:15:05,203.0.113.50,=1+1,failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,+1234,failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,-5,failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,@SUM(A1),failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,<script>alert(1)</script>,failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,"'; DROP TABLE alerts;--",failure,10.0.0.5,ssh
+2025-03-14T09:15:05,203.0.113.50,José 用户 😀,failure,10.0.0.5,ssh

@@ -1,0 +1,10 @@
+# Dark base theme. Colours are the ones in Section G.1 (dashboard/theme.py holds the same values).
+[theme]
+base = "dark"
+backgroundColor = "#0B0D10"
+secondaryBackgroundColor = "#14181D"
+textColor = "#E6E8EB"
+primaryColor = "#6B7A8F"
+
+[server]
+headless = true
